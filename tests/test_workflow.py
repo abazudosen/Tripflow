@@ -49,6 +49,8 @@ def test_approval_gate_saves_checkpoint() -> None:
     assert payload["state"]["quotes"]["insurance"] == 20
     assert payload["state"]["quotes"]["total"] == 620
     assert checkpoint_store.checkpoint_path(session_id).exists()
+    checkpoint_event = next(event for event in payload["trace"] if event["step"] == "checkpoint")
+    assert checkpoint_event["data"] == {"checkpoint": "awaiting_approval"}
 
 
 def test_denied_approval_stops_booking() -> None:

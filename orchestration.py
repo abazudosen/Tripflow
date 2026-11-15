@@ -168,13 +168,13 @@ def to_response(state: SessionState, message: str) -> SessionResponse:
 
 
 def save_checkpoint(state: SessionState, store: CheckpointStore, checkpoint_name: str) -> None:
-    path = store.save(state, checkpoint_name)
+    store.save(state, checkpoint_name)
     state.checkpoint_ready = True
     add_trace(
         state,
         "checkpoint",
         f"Saved checkpoint '{checkpoint_name}'.",
-        {"path": path, "checkpoint": checkpoint_name},
+        {"checkpoint": checkpoint_name},
     )
 
 

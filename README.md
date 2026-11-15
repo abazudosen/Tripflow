@@ -1,8 +1,10 @@
-# Tripflow — Resumable Travel Workflow
+# Tripflow — AI Travel-Booking Workflow
 
-Tripflow is a small web application that demonstrates a supervised travel-booking workflow. It gathers a trip request, estimates costs, applies approval policies, and can pause and resume from a saved checkpoint.
+Tripflow is an AI project that builds a travel-booking autonomous workflow. It brings together **orchestration, autonomy, checkpoints, and observability** to show how a travel assistant can coordinate trip-planning tasks, act within policy, pause for human approval, and resume with its saved context.
 
-The workflow is deterministic: routes, prices, insurance estimates, and booking references are simulated. Prices are illustrative USD estimates, not live quotes, and the app does not make real reservations.
+![Tripflow app demo showing travel estimates, an approval pause, and checkpoint resume](assets/tripflow-demo.gif)
+
+The workflow is deterministic, not powered by a live AI model: routes, prices, insurance estimates, and booking references are simulated. Prices are illustrative USD estimates, not live quotes, and the app does not make real reservations.
 
 ## Features
 
@@ -42,7 +44,6 @@ All amounts are illustrative. No live travel services are contacted.
 - `webapp.py`: FastAPI endpoints and static file serving.
 - `static/`: browser application.
 - `tests/`: API and workflow behavior tests.
-- `VIDEO_SCRIPT.md`: timed voice-over and screen-recording guide.
 
 ## Run tests
 
