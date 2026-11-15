@@ -1,0 +1,33 @@
+[project]
+name = "tripflow-travel-workflow"
+version = "0.1.0"
+description = "A resumable travel-planning workflow with approval gates and observability"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.116.1",
+  "uvicorn>=0.35.0",
+  "httpx>=0.28.0",
+  "pydantic>=2.11.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.0"
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+  "app_models",
+  "checkpoint_store",
+  "main",
+  "orchestration",
+  "webapp",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
